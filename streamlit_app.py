@@ -45,7 +45,7 @@ st.markdown("""
         background-color: #16a085;
     }
     block-container {
-    background-color: #f48fb1 !important;
+        background-color: #0070AD !important;
     }
     </style>
 """, unsafe_allow_html=True)
