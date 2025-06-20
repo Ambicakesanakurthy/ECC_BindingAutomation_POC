@@ -13,7 +13,7 @@ st.markdown("""
     }
  
     .main {
-        background-color: #d0359f;
+        background-color: white;
         padding: 40px 30px;
         border-radius: 15px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
@@ -24,12 +24,12 @@ st.markdown("""
  
     h1 {
         text-align: center;
-        color: #114488;
+        color: #2c3e50;
     }
  
     .sub {
         text-align: center;
-        color: #7f8c8d;
+        color: #6d6d6d;
         margin-bottom: 30px;
     }
  
@@ -43,6 +43,9 @@ st.markdown("""
  
     .stButton>button:hover {
         background-color: #16a085;
+    }
+    block-container {
+    background-color: #f48fb1 !important;
     }
     </style>
 """, unsafe_allow_html=True)
