@@ -1,16 +1,14 @@
 import streamlit as st
+import pandas as pd
+import xml.etree.ElementTree as ET
+import os
+
+st.set_page_config(page_title="TGML Binder Tool", layout="centered")
 
 st.markdown("""
     <style>
-    .body {
-    background: #0070AD;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    }
+    body {
+        background-color: #2980b9
     .title {
         font-size: 30px;
         font-weight: bold;
@@ -48,6 +46,13 @@ st.markdown("""
     .stButton > button:hover {
         background-color: #0070AD;
     }
+
+    h1 {
+    margin-bottom: 10px;
+    color: #114488;
+    font-size: 24px;
+    text-align: center;
+}
  
     </style>
 """, unsafe_allow_html=True)
@@ -55,12 +60,7 @@ st.markdown("""
 st.markdown('<div class="title"> TGML Auto-Binder Tool</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Upload your TGML and Excel file below to start binding</div>', unsafe_allow_html=True)
 
-
-import pandas as pd
-import xml.etree.ElementTree as ET
-import os
  
-st.set_page_config(page_title="TGML Binder Tool", layout="centered")
  
 #st.title("TGML Automatic Binder")
 #st.markdown("Upload your TGML file, Excel file, and select the sheet name to bind automatically.")
