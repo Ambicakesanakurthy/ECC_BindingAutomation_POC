@@ -1,78 +1,73 @@
 import streamlit as st
 import pandas as pd
 import xml.etree.ElementTree as ET
-import os
-
-st.set_page_config(page_title="TGML Binder Tool", layout="centered")
-
+ 
+# Set page configuration
+st.set_page_config(page_title="Automatic Binding Tool", layout="centered")
+ 
+# Add custom CSS for styling the background and form
 st.markdown("""
     <style>
     body {
         background-color: #2980b9;
-        }
-    .title {
-        font-size: 30px;
-        font-weight: bold;
-        color: #1f77b4;
+    }
+ 
+    .main {
+        background-color: #ecf0f1;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        max-width: 500px;
+        margin: auto;
+        margin-top: 60px;
+    }
+ 
+    h1 {
         text-align: center;
-        margin-bottom: 20px;
+        color: #2c3e50;
     }
  
-    .subtitle {
-        font-size: 20px;
-        color: #4b4b4b;
+    .sub {
         text-align: center;
-        margin-bottom: 40px;
+        color: #7f8c8d;
+        margin-bottom: 30px;
     }
  
-    .block-container {
-        background-color: #f9f9f9;
-        padding: 30px;
-        border-radius: 10px;
-    }
- 
-    .css-1aumxhk {  /* Applies to main content box */
-        background-color: #ffffff;
-    }
- 
-    .stButton > button {
-        background-color: #1f77b4;
+    .stButton>button {
+        background-color: #1abc9c;
         color: white;
         font-weight: bold;
         border-radius: 8px;
-        height: 40px;
-        width: 200px;
+        padding: 10px 24px;
     }
  
-    .stButton > button:hover {
-        background-color: #0070AD;
+    .stButton>button:hover {
+        background-color: #16a085;
     }
- 
     </style>
 """, unsafe_allow_html=True)
  
-st.markdown('<div class="title"> TGML Auto-Binder Tool</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Upload your TGML and Excel file below to start binding</div>', unsafe_allow_html=True)
-
+# Add title and description
+st.markdown('<div class="main">', unsafe_allow_html=True)
+st.markdown('<h1>Automatic Binding Tool</h1>', unsafe_allow_html=True)
+st.markdown('<p class="sub">Upload TGML & Excel File to Update Bindings</p>', unsafe_allow_html=True)
  
+# File uploaders and input
+tgml_file = st.file_uploader("TGML File", type="tgml")
+excel_file = st.file_uploader("Excel File", type="xlsx")
+sheet_name = st.text_input("Sheet Name:", "")
  
-#st.title("TGML Automatic Binder")
-#st.markdown("Upload your TGML file, Excel file, and select the sheet name to bind automatically.")
- 
-tgml_file = st.file_uploader("Upload TGML (.tgml) file", type="tgml")
-excel_file = st.file_uploader("Upload Excel (.xlsx) file", type="xlsx")
-sheet_name = st.text_input("Enter Sheet Name (e.g., DDC-1, DDC37)", "")
- 
-if st.button("Run Binding") and tgml_file and excel_file and sheet_name:
+# Button and logic
+if st.button("Submit and Download") and tgml_file and excel_file and sheet_name:
     try:
-        # Parse TGML
+        # Parse XML
         tree = ET.parse(tgml_file)
         root = tree.getroot()
  
-        # Load Excel
+        # Read Excel
         df = pd.read_excel(excel_file, sheet_name=sheet_name)
- 
         label_to_bind = {}
+ 
         for _, row in df.iterrows():
             nomenclature = str(row.get("Nomenclature", "")).strip()
             for col in ["First Label", "Second Label", "Third Label"]:
@@ -80,6 +75,7 @@ if st.button("Run Binding") and tgml_file and excel_file and sheet_name:
                 if label:
                     label_to_bind[label] = nomenclature
  
+        # Replace in TGML
         in_group = False
         current_text = None
         inside_target_text = False
@@ -92,25 +88,20 @@ if st.button("Run Binding") and tgml_file and excel_file and sheet_name:
                 inside_target_text = current_text in label_to_bind
             elif elem.tag == "Bind" and in_group and inside_target_text:
                 new_bind = label_to_bind.get(current_text)
-                old_bind = elem.attrib.get("Name", "")
-                if new_bind:
-                    elem.set("Name", new_bind)
+                elem.set("Name", new_bind)
             elif elem.tag == "Text" and inside_target_text:
                 inside_target_text = False
  
-        # Save to output file
-        output_file_path = "output.tgml"
-        tree.write(output_file_path, encoding="utf-8", xml_declaration=True)
+        # Save new file
+output_file = "updated_" + tgml_file.name
+        tree.write(output_file, encoding="utf-8", xml_declaration=True)
  
-        with open(output_file_path, "rb") as f:
-            st.download_button(
-                label="Download Updated TGML File",
-                data=f,
-file_name="updated_" + tgml_file.name,
-                mime="application/xml"
-            )
+        with open(output_file, "rb") as f:
+            st.download_button("📥 Download Updated TGML", f, file_name=output_file)
  
-        st.success("Binding completed successfully!")
+        st.success("✅ Binding completed successfully!")
  
     except Exception as e:
-        st.error(f"Error: {e}")
+        st.error(f"❌ Error: {e}")
+ 
+st.markdown('</div>', unsafe_allow_html=True)
