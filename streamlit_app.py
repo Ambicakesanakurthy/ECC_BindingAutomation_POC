@@ -1,3 +1,49 @@
+st.markdown("""
+    <style>
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        color: #1f77b4;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+ 
+    .subtitle {
+        font-size: 18px;
+        color: #4b4b4b;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+ 
+    .block-container {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+    }
+ 
+    .css-1aumxhk {  /* Applies to main content box */
+        background-color: #ffffff;
+    }
+ 
+    .stButton > button {
+        background-color: #1f77b4;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        height: 45px;
+        width: 200px;
+    }
+ 
+    .stButton > button:hover {
+        background-color: #125f8a;
+    }
+ 
+    </style>
+""", unsafe_allow_html=True)
+ 
+st.markdown('<div class="title">🔗 TGML Auto-Binder Tool</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Upload your TGML and Excel file below to start binding</div>', unsafe_allow_html=True)
+
 import streamlit as st
 import pandas as pd
 import xml.etree.ElementTree as ET
