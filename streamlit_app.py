@@ -23,7 +23,7 @@ st.markdown("""
        color: black;
      }
  
-    .sub {
+    sub {
         text-align: center;
         color: #d0359f;
         margin-bottom: 30px;
