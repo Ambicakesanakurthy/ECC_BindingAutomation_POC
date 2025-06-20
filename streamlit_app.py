@@ -25,7 +25,7 @@ st.markdown("""
  
     .sub {
         text-align: center;
-        color: #6d6d6d;
+        color: #d0359f;
         margin-bottom: 30px;
         font-size: 16px;
     }
