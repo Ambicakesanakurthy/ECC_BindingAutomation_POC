@@ -12,15 +12,7 @@ st.markdown("""
         background-color: #0070AD;
     }
  
-    .main {
-        background-color: #0070AD;
-        padding: 40px 30px;
-        border-radius: 15px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-        max-width: 500px;
-        margin: auto;
-        margin-top: 60px;
-    }
+    
  
     h1 {
         text-align: center;
