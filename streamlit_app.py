@@ -30,7 +30,7 @@ st.markdown("""
        text-align: center;
        margin-bottom: 20px;
        font-size: 14px;
-       color: #0070AD;
+       color: black;
      }
  
     .sub {
@@ -58,7 +58,7 @@ st.markdown("""
  
 # Add title and description
 #st.markdown('<div class="main">', unsafe_allow_html=True)
-st.markdown('<h1>Automatic Binding Tool</h1>', unsafe_allow_html=True)
+st.markdown('<h1>TGML Binding Tool</h1>', unsafe_allow_html=True)
 st.markdown('<p class="sub">Upload TGML & Excel File to Update Bindings</p>', unsafe_allow_html=True)
  
 # File uploaders and input
