@@ -93,7 +93,7 @@ if st.button("Submit and Download") and tgml_file and excel_file and sheet_name:
                 inside_target_text = False
  
         # Save new file
-output_file = "updated_" + tgml_file.name
+        output_file = "updated_" + tgml_file.name
         tree.write(output_file, encoding="utf-8", xml_declaration=True)
  
         with open(output_file, "rb") as f:
