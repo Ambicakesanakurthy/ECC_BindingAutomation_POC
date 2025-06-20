@@ -1,3 +1,5 @@
+import streamlit as st
+
 st.markdown("""
     <style>
     .title {
@@ -44,7 +46,7 @@ st.markdown("""
 st.markdown('<div class="title">🔗 TGML Auto-Binder Tool</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Upload your TGML and Excel file below to start binding</div>', unsafe_allow_html=True)
 
-import streamlit as st
+
 import pandas as pd
 import xml.etree.ElementTree as ET
 import os
