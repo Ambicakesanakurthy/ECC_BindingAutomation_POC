@@ -30,7 +30,7 @@ st.markdown("""
        text-align: center;
        margin-bottom: 20px;
        font-size: 14px;
-       color: #d0359f;
+       color: #0070AD;
      }
  
     .sub {
