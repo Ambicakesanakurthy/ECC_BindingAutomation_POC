@@ -8,7 +8,7 @@ st.set_page_config(page_title="TGML Binder Tool", layout="centered")
 st.markdown("""
     <style>
     body {
-        background-color: #2980b9
+        background-color: #2980b9;
         }
     .title {
         font-size: 30px;
