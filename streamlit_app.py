@@ -11,9 +11,6 @@ st.markdown("""
     body {
         background-color: #0070AD;
     }
- 
-    
- 
     h1 {
         text-align: center;
         color: #114488;
