@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("""
     <style>
     .title {
-        font-size: 25px;
+        font-size: 30px;
         font-weight: bold;
         color: #1f77b4;
         text-align: center;
@@ -11,7 +11,7 @@ st.markdown("""
     }
  
     .subtitle {
-        font-size: 10px;
+        font-size: 20px;
         color: #4b4b4b;
         text-align: center;
         margin-bottom: 40px;
@@ -32,7 +32,7 @@ st.markdown("""
         color: white;
         font-weight: bold;
         border-radius: 8px;
-        height: 45px;
+        height: 40px;
         width: 200px;
     }
  
