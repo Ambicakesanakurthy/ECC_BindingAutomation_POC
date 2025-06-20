@@ -26,6 +26,12 @@ st.markdown("""
         text-align: center;
         color: #114488;
     }
+    p {
+       text-align: center;
+       margin-bottom: 20px;
+       font-size: 14px;
+       color: #d0359f;
+     }
  
     .sub {
         text-align: center;
