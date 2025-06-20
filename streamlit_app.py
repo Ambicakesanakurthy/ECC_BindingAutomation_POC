@@ -9,6 +9,7 @@ st.markdown("""
     <style>
     body {
         background-color: #2980b9
+        }
     .title {
         font-size: 30px;
         font-weight: bold;
@@ -46,13 +47,6 @@ st.markdown("""
     .stButton > button:hover {
         background-color: #0070AD;
     }
-
-    h1 {
-    margin-bottom: 10px;
-    color: #114488;
-    font-size: 24px;
-    text-align: center;
-}
  
     </style>
 """, unsafe_allow_html=True)
