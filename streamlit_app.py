@@ -100,9 +100,9 @@ if st.button("Submit and Download") and tgml_file and excel_file and sheet_name:
         tree.write(output_file, encoding="utf-8", xml_declaration=True)
  
         with open(output_file, "rb") as f:
-            st.download_button("📥 Download Updated TGML", f, file_name=output_file)
+            st.download_button("Download Updated TGML", f, file_name=output_file)
  
-        st.success("✅ Binding completed successfully!")
+        st.success("Binding completed successfully!")
  
     except Exception as e:
         st.error(f"❌ Error: {e}")
