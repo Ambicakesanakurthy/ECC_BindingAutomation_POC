@@ -53,8 +53,8 @@ import os
  
 st.set_page_config(page_title="TGML Binder Tool", layout="centered")
  
-st.title("TGML Automatic Binder")
-st.markdown("Upload your TGML file, Excel file, and select the sheet name to bind automatically.")
+#st.title("TGML Automatic Binder")
+#st.markdown("Upload your TGML file, Excel file, and select the sheet name to bind automatically.")
  
 tgml_file = st.file_uploader("Upload TGML (.tgml) file", type="tgml")
 excel_file = st.file_uploader("Upload Excel (.xlsx) file", type="xlsx")
