@@ -14,8 +14,8 @@ st.markdown("""
         background-color: #0070AD;
     }
     /* style the content box */
-    .main {
-     background-color: pink;
+    main {
+         color: pink;
      }
 
      /* title styling */
@@ -56,7 +56,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
  
 # Add title and description
-st.markdown('<div class="main">', unsafe_allow_html=True)
+#st.markdown('<div class="main">', unsafe_allow_html=True)
 st.markdown('<h1>TGML Binding Tool</h1>', unsafe_allow_html=True)
 st.markdown('<p class="sub">Upload TGML & Excel File to Update Bindings</p>', unsafe_allow_html=True)
  
