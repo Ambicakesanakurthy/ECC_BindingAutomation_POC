@@ -9,11 +9,11 @@ st.set_page_config(page_title="Automatic Binding Tool", layout="centered")
 st.markdown("""
     <style>
     body {
-        background-color: #2980b9;
+        background-color: #0070AD;
     }
  
     .main {
-        background-color: #ecf0f1;
+        background-color: #d0359f;
         padding: 40px 30px;
         border-radius: 15px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
@@ -24,7 +24,7 @@ st.markdown("""
  
     h1 {
         text-align: center;
-        color: #2c3e50;
+        color: #114488;
     }
  
     .sub {
