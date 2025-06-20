@@ -8,20 +8,10 @@ st.set_page_config(page_title="Automatic Binding Tool", layout="centered")
 # Add custom CSS for styling the background and form
 st.markdown("""
     <style>
-    .block-contanier {
+    body {
         background-color: #0070AD;
-        padding-top: 50px;
-        padding-bottom:50px;
     }
-    .main {
-        background-color: #f4f4f4;
-        padding: 40px 30px;
-        border-radius: 15px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-        max-width: 600px;
-        margin: auto;
-    }
-    .h1 {
+    h1 {
         text-align: center;
         color: #114488;
         font-size: 32px;
