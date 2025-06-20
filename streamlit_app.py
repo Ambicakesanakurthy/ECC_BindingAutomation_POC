@@ -111,6 +111,6 @@ if st.button("Submit and Download") and tgml_file and excel_file and sheet_name:
         st.success("Binding completed successfully!")
  
     except Exception as e:
-        st.error(f"❌ Error: {e}")
+        st.error(f"Error: {e}")
  
 st.markdown('</div>', unsafe_allow_html=True)
