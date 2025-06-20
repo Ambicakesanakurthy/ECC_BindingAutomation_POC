@@ -1,17 +1,24 @@
-import streamlit as st
-import pandas as pd
-import xml.etree.ElementTree as ET
- 
-# Set page configuration
+#Import required libraries
+import streamlit as st     # For creating web UI
+import pandas as pd        # For reading excel file
+import xml.etree.ElementTree as ET   # For parsing and editing TGML
+
+# Set title on browser tab and center-align the layout
 st.set_page_config(page_title="Automatic Binding Tool", layout="centered")
  
 # Add custom CSS for styling the background and form
 st.markdown("""
     <style>
+    /* set the full page background color */
     .body {
         background-color: #0070AD;
     }
-    
+    /* style the content box */
+    .main {
+     background-color: #f4f4f4;
+     }
+
+     /* title styling */
     h1 {
         text-align: center;
         color: #114488;
@@ -23,14 +30,14 @@ st.markdown("""
        font-size: 14px;
        color: black;
      }
- 
+    /* sub title styling*/
     sub {
         text-align: center;
         color: #d0359f;
         margin-bottom: 30px;
         font-size: 16px;
     }
- 
+    /* button styling */
     .stButton>button {
         background-color: #1abc9c;
         color: white;
@@ -38,7 +45,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 10px 24px;
     }
- 
+    /* Hover effect for buttn=on */
     .stButton>button:hover {
         background-color: #16a085;
     }
@@ -49,7 +56,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
  
 # Add title and description
-#st.markdown('<div class="main">', unsafe_allow_html=True)
+st.markdown('<div class="main">', unsafe_allow_html=True)
 st.markdown('<h1>TGML Binding Tool</h1>', unsafe_allow_html=True)
 st.markdown('<p class="sub">Upload TGML & Excel File to Update Bindings</p>', unsafe_allow_html=True)
  
