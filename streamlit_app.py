@@ -33,7 +33,7 @@ st.markdown("""
     /* sub title styling*/
     sub {
         text-align: center;
-        color: #d0359f;
+        color: pink;
         margin-bottom: 30px;
         font-size: 16px;
     }
