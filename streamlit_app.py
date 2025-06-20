@@ -15,7 +15,7 @@ st.markdown("""
     }
     /* style the content box */
     .main {
-     background-color: #f4f4f4;
+     background-color: pink;
      }
 
      /* title styling */
