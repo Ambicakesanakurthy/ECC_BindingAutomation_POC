@@ -2,6 +2,15 @@ import streamlit as st
 
 st.markdown("""
     <style>
+    .body {
+    background: #0070AD;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
     .title {
         font-size: 30px;
         font-weight: bold;
