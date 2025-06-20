@@ -58,7 +58,7 @@ st.markdown("""
 # Add title and description
 st.markdown('<div class="main">', unsafe_allow_html=True)
 #title of the app
-st.markdown('<h1>TGML Binding Tool</h1>')
+st.markdown('<h1>TGML Binding Tool</h1>', unsafe_allow_html=True)
 # sub text with instreuctions
 st.markdown('<p class="sub">Upload TGML & Excel File to Update Bindings</p>', unsafe_allow_html=True)
  
