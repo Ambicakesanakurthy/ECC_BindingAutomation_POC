@@ -13,7 +13,7 @@ st.markdown("""
     }
  
     .main {
-        background-color: white;
+        background-color: #0070AD;
         padding: 40px 30px;
         border-radius: 15px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
