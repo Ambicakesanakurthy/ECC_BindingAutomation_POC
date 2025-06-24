@@ -2,6 +2,7 @@
 import streamlit as st     # For creating web UI
 import pandas as pd        # For reading excel file
 import xml.etree.ElementTree as ET   # For parsing and editing TGML
+from io import BytesIO
 
 # Set title on browser tab and center-align the layout
 st.set_page_config(page_title="Automatic Binding Tool", layout="centered")
@@ -65,7 +66,19 @@ st.markdown('<p class="sub">Upload TGML & Excel File to Update Bindings</p>', un
 # File uploaders and input
 tgml_file = st.file_uploader("TGML File", type="tgml")
 excel_file = st.file_uploader("Excel File", type="xlsx")
-sheet_name = st.text_input("Sheet Name:", "")
+sheet_name = None
+
+if excel_file:
+    try:
+     # Reads sheet names from excel file
+     xls = pd.ExcelFile(excel_file)
+     # List of sheet names
+     sheet_names = xls.sheet_names    
+     # Creates the Dropdown menu
+     sheet_name = st.selectbox("select a sheet from the excel file", sheet_names)
+    except Exception as e:
+     st.error(f"Error in Reading Excel Sheet Names: {e}")
+     
  
 # Button and logic
 if st.button("Submit and Download") and tgml_file and excel_file and sheet_name:
